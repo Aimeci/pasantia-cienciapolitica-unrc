@@ -66,6 +66,73 @@
 @media(max-width:900px){.hero{min-height:auto!important}.project-tfg-strip{margin:28px 18px 0;grid-template-columns:1fr;padding:26px 22px}.project-tfg-orbit .orbit{width:min(460px,88vw)}}
 @media(max-width:600px){.logos{gap:14px!important;align-items:center}.logos img:first-child{height:68px!important;max-width:52%!important}.logos img:last-child{height:58px!important;max-width:34%!important}.project-tfg-strip{border-radius:22px;padding:24px 18px}.project-tfg-orbit .orbit{width:82vw}.project-tfg-copy h2{font-size:2rem}.chart-period{font-size:1.05rem}}
 </style>
+
+<style id="responsive-final-fixes-v6">
+/* Correcciones específicas para celulares: logos, infografía y tarjetas de vinculación */
+@media (max-width:600px){
+  /* 1. Equilibrio visual entre los dos logos oficiales */
+  .logos{justify-content:flex-start!important;gap:20px!important;width:auto!important}
+  .logo-humanas{height:68px!important;width:auto!important;max-width:58%!important}
+  .logo-unrc-wrap{width:92px!important;height:92px!important;flex:0 0 92px!important}
+  .logo-unrc{height:92px!important;width:auto!important;max-width:92px!important;object-fit:contain!important}
+
+  /* 2. Del proyecto al TFG: en móvil deja de ser orbital para evitar superposiciones */
+  .project-tfg-orbit{width:100%!important;display:block!important}
+  .project-tfg-orbit .orbit{
+    width:100%!important;height:auto!important;aspect-ratio:auto!important;
+    border-radius:22px!important;padding:18px!important;
+    display:grid!important;grid-template-columns:1fr!important;gap:12px!important;
+    background:linear-gradient(145deg,#092b5b,#0a6e8b)!important;
+  }
+  .project-tfg-orbit .orbit:before,.project-tfg-orbit .orbit:after{display:none!important}
+  .project-tfg-orbit .core,.project-tfg-orbit .node{
+    position:relative!important;inset:auto!important;top:auto!important;right:auto!important;bottom:auto!important;left:auto!important;
+    transform:none!important;width:100%!important;height:auto!important;aspect-ratio:auto!important;min-height:0!important;
+    border-radius:16px!important;padding:15px 14px!important;margin:0!important;
+  }
+  .project-tfg-orbit .core{order:0;background:#eaf9fb!important;padding:18px!important}
+  .project-tfg-orbit .core strong{font-size:1.08rem!important}
+  .project-tfg-orbit .node{font-size:.9rem!important}
+  .project-tfg-orbit .n1{order:1}.project-tfg-orbit .n2{order:2}.project-tfg-orbit .n3{order:3}.project-tfg-orbit .n4{order:4}
+  .project-tfg-orbit .orbit-label{max-width:none!important;font-size:.76rem!important}
+
+  /* 3. Vinculación: separación real entre tarjetas y sin desplazamientos de reveal */
+  #vinculacion .linkcards{display:grid!important;grid-template-columns:1fr!important;gap:20px!important;row-gap:20px!important}
+  #vinculacion .linkcard{min-height:0!important;height:auto!important;margin:0!important;transform:none!important}
+  #vinculacion .linkcard.reveal,#vinculacion .linkcard.reveal.from-right,#vinculacion .linkcard.reveal.visible{transform:none!important}
+}
+@media (max-width:420px){
+  .logo-humanas{height:64px!important;max-width:57%!important}
+  .logo-unrc-wrap{width:88px!important;height:88px!important;flex-basis:88px!important}
+  .logo-unrc{height:88px!important;max-width:88px!important}
+}
+</style>
+
+<style id="mobile-final-fixes-v2">
+/* Ajustes finales exclusivamente para celular */
+@media (max-width:600px){
+  /* Logos: dar más presencia visual al escudo UNRC */
+  .logos{justify-content:flex-start!important;align-items:center!important;gap:28px!important;overflow:visible!important;}
+  .logo-humanas{height:66px!important;width:auto!important;max-width:58%!important;flex:0 1 auto!important;}
+  .logo-unrc-wrap{width:120px!important;height:120px!important;min-width:120px!important;flex:0 0 120px!important;overflow:visible!important;}
+  .logo-unrc{height:120px!important;width:120px!important;max-width:120px!important;object-fit:contain!important;transform:scale(1.18)!important;transform-origin:center!important;}
+
+  /* Testimonios: cada tarjeta ocupa su propio flujo y nunca se desplaza sobre otra */
+  #testimonios .testimonials{display:flex!important;flex-direction:column!important;gap:26px!important;row-gap:26px!important;}
+  #testimonios .quote{display:block!important;position:relative!important;width:100%!important;height:auto!important;min-height:0!important;margin:0!important;padding:28px 26px!important;transform:none!important;}
+  #testimonios .quote.reveal,
+  #testimonios .quote.reveal.from-right,
+  #testimonios .quote.reveal.visible{transform:none!important;}
+  #testimonios .quote p{margin-top:0!important;margin-bottom:18px!important;}
+}
+@media (max-width:420px){
+  .logos{gap:22px!important;}
+  .logo-humanas{height:62px!important;max-width:55%!important;}
+  .logo-unrc-wrap{width:116px!important;height:116px!important;min-width:116px!important;flex-basis:116px!important;}
+  .logo-unrc{height:116px!important;width:116px!important;max-width:116px!important;transform:scale(1.2)!important;}
+  #testimonios .testimonials{gap:24px!important;}
+}
+</style>
 </head><body>
 <header class="topbar"><div class="brand"><div class="brand-badge">P</div><div>Pasantía · Ciencia Política<small>Facultad de Ciencias Humanas · UNRC</small></div></div><nav class="desktop-nav"><a href="#trayectoria">Trayectoria</a><a href="#catedra">La cátedra</a><a href="#proyectos">TFG</a><a href="#vinculacion">Vinculación</a><a href="#testimonios">Testimonios</a></nav><button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button></header>
 <nav class="mobile-menu" id="mobileMenu"><a href="#trayectoria">Trayectoria</a><a href="#catedra">La cátedra</a><a href="#proyectos">TFG y temáticas</a><a href="#vinculacion">Vinculación</a><a href="#testimonios">Testimonios</a></nav>
